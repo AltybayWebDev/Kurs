@@ -1,3 +1,7 @@
 .navbar {
-    background-color: #085E7D ;
+    background-color: #085E7D !important;
+}
+
+.bg-dark {
+    background-color: #085E7D !important;
 }
