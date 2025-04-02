@@ -1,15 +1,17 @@
 const shoppingList = document.querySelector(".shopping-list");
 const shoppingForm = document.querySelector(".shopping-form");
 
-loadItems();
-shoppingForm.addEventListener("submit", handleFormSubmit);
+document.addEventListener("DOMContentLoaded", function () {
+  loadItems();
+  shoppingForm.addEventListener("submit", handleFormSubmit);
+});
 
 function loadItems() {
   const items = [
     { id: 1, name: "Yumurta", completed: false },
     { id: 2, name: "Balık", completed: true },
     { id: 3, name: "Süt", completed: false },
-    { id: 4, name: "Ekmek", completed: true }
+    { id: 4, name: "Ekmek", completed: true },
   ];
 
   shoppingList.innerHTML = "";
@@ -50,7 +52,7 @@ function handleFormSubmit(event) {
 }
 
 function toggleCompleted(event) {
-    event.target.parentElement.toggleAttribute("item-completed");
+  event.target.parentElement.toggleAttribute("item-completed");
 }
 
 function createListItems(item) {
@@ -67,12 +69,13 @@ function createListItems(item) {
   div.classList.add("item-name");
 
   // delete-icon
-  const deleteIcon = document.createElement("span");
+  const deleteIcon = document.createElement("i");
   deleteIcon.className = "fs-3 bi bi-x text-danger delete-icon";
+  deleteIcon.addEventListener("click", removeItem);
 
   // li
   const li = document.createElement("li");
-  li.classList.add("border", "rounded", "p-3", "mb-1");
+  li.classList.add("border", "rounded", "p-2", "mb-1");
   li.toggleAttribute("item-completed", item.completed);
 
   li.appendChild(input);
@@ -80,4 +83,8 @@ function createListItems(item) {
   li.appendChild(deleteIcon);
 
   return li;
+}
+
+function removeItem(event) {
+  event.target.parentElement.remove();
 }
