@@ -1,9 +1,15 @@
 const shoppingList = document.querySelector(".shopping-list");
 const shoppingForm = document.querySelector(".shopping-form");
+const filterButtons = document.querySelectorAll(".filter-buttons button");
 
 document.addEventListener("DOMContentLoaded", function () {
   loadItems();
+
   shoppingForm.addEventListener("submit", handleFormSubmit);
+
+  for (let button of filterButtons) {
+    button.addEventListener("click", handleFilterSelection);
+  }
 });
 
 function loadItems() {
@@ -111,4 +117,16 @@ function cancelEnter(event) {
     event.preventDefault();
     closeEditMode(event);
   }
+}
+
+function handleFilterSelection(event) {
+    const filterBtn = event.target;
+
+    for (let button of filterButtons) {
+        button.classList.add("btn-secondary");
+        button.classList.remove("btn-primary");
+    }
+
+    filterBtn.classList.remove("btn-secondary");
+    filterBtn.classList.add("btn-primary");
 }
