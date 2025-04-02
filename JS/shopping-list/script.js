@@ -12,13 +12,21 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+function saveToLocalStorage() {
+  const items = shoppingList.querySelectorAll("li");
+  const liste = [];
+  for (let li of items) {
+    const id = li.getAttribute("item-id");
+    const name = li.querySelector(".item-name").textContent;
+    const completed = li.hasAttribute("item-completed");
+    liste.push({ id, name, completed });
+  }
+
+  localStorage.setItem("shoppingList", JSON.stringify(liste));
+}
+
 function loadItems() {
-  const items = [
-    { id: 1, name: "Yumurta", completed: false },
-    { id: 2, name: "Balık", completed: true },
-    { id: 3, name: "Süt", completed: false },
-    { id: 4, name: "Ekmek", completed: true },
-  ];
+  const items = JSON.parse(localStorage.getItem("shoppingList")) || [];
 
   shoppingList.innerHTML = "";
 
@@ -38,6 +46,10 @@ function addItem(input) {
   shoppingList.prepend(newItem);
 
   input.value = "";
+
+  updateFilterItems();
+
+  saveToLocalStorage();
 }
 
 function generateId() {
@@ -59,6 +71,10 @@ function handleFormSubmit(event) {
 
 function toggleCompleted(event) {
   event.target.parentElement.toggleAttribute("item-completed");
+
+  updateFilterItems();
+
+  saveToLocalStorage();
 }
 
 function createListItems(item) {
@@ -86,6 +102,7 @@ function createListItems(item) {
   const li = document.createElement("li");
   li.classList.add("border", "rounded", "p-2", "mb-1");
   li.toggleAttribute("item-completed", item.completed);
+  li.setAttribute("item-id", item.id);
 
   li.appendChild(input);
   li.appendChild(div);
@@ -96,6 +113,8 @@ function createListItems(item) {
 
 function removeItem(event) {
   event.target.parentElement.remove();
+
+  saveToLocalStorage();
 }
 
 function openEditMode(event) {
@@ -110,6 +129,8 @@ function closeEditMode(event) {
   if (li.hasAttribute("item-completed") == false) {
     event.target.contentEditable = false;
   }
+
+  saveToLocalStorage();
 }
 
 function cancelEnter(event) {
@@ -120,13 +141,42 @@ function cancelEnter(event) {
 }
 
 function handleFilterSelection(event) {
-    const filterBtn = event.target;
+  const filterBtn = event.target;
 
-    for (let button of filterButtons) {
-        button.classList.add("btn-secondary");
-        button.classList.remove("btn-primary");
+  for (let button of filterButtons) {
+    button.classList.add("btn-secondary");
+    button.classList.remove("btn-primary");
+  }
+
+  filterBtn.classList.remove("btn-secondary");
+  filterBtn.classList.add("btn-primary");
+
+  filterItems(filterBtn.getAttribute("item-filter"));
+}
+
+function filterItems(filterType) {
+  const li_items = shoppingList.querySelectorAll("li");
+
+  for (let li of li_items) {
+    li.classList.remove("d-block");
+    li.classList.remove("d-none");
+
+    const completed = li.hasAttribute("item-completed");
+
+    if (filterType === "completed") {
+      // Show only completed items
+      li.classList.toggle(completed ? "d-flex" : "d-none");
+    } else if (filterType === "incomplete") {
+      // Show only incomplete items
+      li.classList.toggle(completed ? "d-none" : "d-flex");
+    } else {
+      // Show all items
+      li.classList.toggle("d-flex");
     }
+  }
+}
 
-    filterBtn.classList.remove("btn-secondary");
-    filterBtn.classList.add("btn-primary");
+function updateFilterItems() {
+  const activeFilter = document.querySelector(".btn-primary[item-filter]");
+  filterItems(activeFilter.getAttribute("item-filter"));
 }
