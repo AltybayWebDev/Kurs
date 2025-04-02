@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping List</title>
-    ,
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -29,10 +28,9 @@
         <div class="input-group">
           <input
             type="text"
-            id="item"
+            id="input"
             class="form-control"
             placeholder="Eleman Ekle"
-            required
           />
           <button type="submit" class="btn btn-primary">
             <i class="bi bi-plus"></i>
@@ -40,13 +38,7 @@
         </div>
       </form>
 
-      <ul class="shopping-list list-unstyled">
-        <li class="border rounded p-3 mb-1">
-          <input type="checkbox" name="form-check-input" />
-          <div class="item-name">item</div>
-          <i class="fs-3 bi bi-x text-danger delete-icon"></i>
-        </li>
-      </ul>
+      <ul class="shopping-list list-unstyled"></ul>
     </div>
 
     <script src="script.js"></script>

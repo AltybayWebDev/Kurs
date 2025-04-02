@@ -23,3 +23,8 @@
     transform: scale(1);
     transition: 200ms;
 }
+
+.shopping-list li[item-completed] .item-name {
+  text-decoration: line-through;
+  color: gray;
+}
