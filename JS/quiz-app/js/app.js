@@ -25,7 +25,12 @@ const quiz = new Quiz(soruListesi);
 const ui = new UI();
 
 ui.btnNext.addEventListener("click", function () {
+  ui.btnNext.classList.remove("show");
   if (quiz.sorular.length > quiz.soruIndex) {
+    startTimer(9);
+    startTimerLine();
+    ui.timeText.textContent = "Kalan Süre: ";
+    ui.timeSecond.textContent = 10;
     ui.soruGoster(quiz.soruGetir());
     ui.soruSayisiniGoster(quiz.soruIndex + 1, quiz.sorular.length);
   } else {
@@ -37,6 +42,9 @@ ui.btnNext.addEventListener("click", function () {
 });
 
 function optionSelected(event) {
+  clearInterval(counter);
+  clearInterval(counterLine);
+  ui.btnNext.classList.add("show");
   let selectedElement = event.target;
   if (selectedElement.nodeName == "SPAN") {
     selectedElement = selectedElement.parentElement;
@@ -70,8 +78,39 @@ ui.btnReplay.addEventListener("click", function () {
 });
 
 ui.btnStart.addEventListener("click", function () {
+  startTimer(9);
+  startTimerLine();
   ui.quizBox.classList.add("active");
   ui.buttonBox.classList.remove("active");
   ui.soruGoster(quiz.soruGetir());
   ui.soruSayisiniGoster(quiz.soruIndex + 1, quiz.sorular.length);
 });
+let counter;
+function startTimer(time) {
+  counter = setInterval(timer, 1000);
+
+  function timer() {
+    ui.timeSecond.textContent = time;
+    time--;
+    if (time < 0) {
+      clearInterval(counter);
+      ui.timeText.textContent = "Süre Bitti!";
+      ui.btnNext.classList.add("show");
+      ui.disableAllOptions();
+      quiz.soruIndex += 1;
+    }
+  }
+}
+let counterLine;
+function startTimerLine() {
+  let lineWidth = 0;
+  counterLine = setInterval(timer, 18);
+  
+  function timer() {
+    lineWidth += 1;
+    ui.timeLine.style.width = lineWidth + "px";
+    if (lineWidth > 549) {
+      clearInterval(counterLine);
+    }
+  }
+}
