@@ -1,0 +1,40 @@
+$color: gray;
+$second-color: green;
+$white: #fff;
+$dark: #000;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: $color;
+
+  header {
+    background-color: $second-color;
+
+    nav {
+      ul {
+        list-style: none;
+
+        li {
+          a {
+            text-decoration: none;
+            color: $white;
+            
+            &:hover {
+              background-color: $dark;
+              color: $color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

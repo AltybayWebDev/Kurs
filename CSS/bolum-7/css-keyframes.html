@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #333;
+        display: flex;
+        height: 100vh;
+      }
+
+      .box {
+        background-color: yellow;
+        width: 150px;
+        height: 150px;
+        position: relative;
+        top: 0;
+        left: 0;
+
+        animation-name: a1;
+        animation-duration: 5s;
+
+        animation: a1 forwards 5s ease-in-out;
+      }
+
+      @keyframes a1 {
+        25% {
+          top: 100px;
+          left: 0;
+        }
+
+        50% {
+          top: 100px;
+          left: 100px;
+          background-color: gray;
+        }
+
+        75% {
+          top: 200px;
+          left: 100px;
+          background-color: green;
+        }
+
+        100% {
+          top: 200px;
+          left: 200px;
+          background-color: red;
+        }
+      }
+
+      @keyframes text_anim {
+        from {
+          left: -800px;
+        }
+
+        to {
+          left: 100px;
+        }
+      }
+
+      .h1 {
+        position: relative;
+        animation: text_anim forwards 2s ease-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <h1 class="h1">Lorem ipsum dolor sit amet.</h1>
+  </body>
+</html>

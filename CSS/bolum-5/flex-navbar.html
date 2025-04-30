@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        background-color: goldenrod;
+        padding: 10px;
+      }
+
+      nav a {
+        align-self: center;
+        font-size: 20px;
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 20px;
+      }
+
+      .navigation {
+        list-style-type: none;
+        display: flex;
+      }
+      .navigation a {
+        display: block;
+        padding: 16px;
+      }
+
+      .navigation a:hover {
+        background-color: rgb(233, 184, 61);
+      }
+
+      .navigation li:last-child {
+        display: none;
+        padding: 10px;
+      }
+
+      @media (max-width: 600px) {
+        nav {
+          position: relative;
+          flex-direction: column;
+        }
+
+        nav a {
+          align-self: flex-start;
+        }
+
+        .navigation {
+          flex-direction: column;
+        }
+
+        .navigation a {
+          text-align: center;
+          padding: 10px;
+          border-top: 1px solid rgba(255, 255, 255, 0.3);
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .navigation li:last-child a {
+          border-bottom: none;
+        }
+
+        .navigation li:last-child {
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 10px;
+        }
+
+        .responsive .navigation li:not(:last-child) {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="responsive" id="main-nav">
+      <a href="#">Logo</a>
+      <ul class="navigation">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Contact</a></li>
+        <li>
+          <a href="#" id="" onclick="displayMenu()"
+            ><i class="fa fa-bars"></i
+          ></a>
+        </li>
+      </ul>
+    </nav>
+
+    <script>
+      function displayMenu() {
+        var link = document.getElementById("main-nav");
+        link.classList.toggle("responsive");
+      }
+    </script>
+  </body>
+</html>

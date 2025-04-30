@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .div {
+        background-color: crimson;
+        width: 150px;
+        height: 150px;
+        float: right;
+      }
+
+      .clearfix {
+        background-color: lime;
+      }
+
+      .clearfix::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="clearfix">
+      <div class="div">div 1</div>
+      <div class="div">div 2</div>
+      <div class="div">div 3</div>
+      <!-- <div style="clear: both"></div> -->
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta laboriosam
+      sint vero minus repellat, autem sed. Architecto aliquam temporibus commodi
+      rem nihil minima quo provident magnam reiciendis. Saepe, nesciunt
+      aspernatur.
+    </p>
+  </body>
+</html>

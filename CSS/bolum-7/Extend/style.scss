@@ -1,0 +1,23 @@
+div {
+  float: left;
+}
+
+%box{
+  width: 100px;
+  height: 100px;
+  background: gray;
+  margin: 10px;
+}
+
+#box1 {
+  @extend %box;
+  background: gray;
+}
+#box2 {
+  @extend %box;
+  background: green;
+}
+#box3 {
+  @extend %box;
+  background: blue;
+}

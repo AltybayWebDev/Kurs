@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Variables</title>
+    <style>
+      :root {
+        --theme: #4040a1;
+        --white: #fff;
+      }
+
+      body {
+        --theme: #f18973;
+        background-color: var(--theme);
+      }
+
+      h2 {
+        border-bottom: 2px solid var(--theme);
+      }
+
+      .container {
+        color: var(--theme);
+        background-color: var(--white);
+        pad: 20px;
+      }
+
+      button {
+        background-color: var(--white);
+        color: var(--theme);
+        border: 1px solid var(--theme);
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Lorem ipsum dolor sit amet.</h1>
+    <div class="container">
+      <h2>Lorem, ipsum dolor.</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
+        aliquam saepe? Aperiam inventore nisi ratione adipisci accusamus neque!
+        In optio placeat nobis error quia, minima est asperiores illo at
+        voluptates?
+      </p>
+      <div><button>Okey</button> <button>Cancel</button></div>
+    </div>
+  </body>
+</html>

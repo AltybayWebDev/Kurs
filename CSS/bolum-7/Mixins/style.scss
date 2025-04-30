@@ -1,0 +1,20 @@
+div {
+  float: left;
+}
+
+@mixin box($color:gray, $width:100px, $height:100px) {
+  width: $width;
+  height: $height;
+  background: $color;
+  margin: 10px;
+}
+
+#box1 {
+  @include box(red, 100px, 200px);
+}
+#box2 {
+  @include box(green, 200px, 50px);
+}
+#box3 {
+  @include box;
+}

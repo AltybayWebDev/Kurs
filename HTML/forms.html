@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+  </head>
+  <body>
+    <form action="forms.html">
+      <div>
+        <label for="name">Adınız:</label>
+        <input type="text" id="name" />
+      </div>
+      <div>
+        <label for="surename">SoyAdınız:</label>
+        <input type="text" id="surename" />
+      </div>
+      <div>
+        <label for="password">Şifre</label>
+        <input type="password" id="password" />
+      </div>
+      <div>
+        <label for="intro">Kendini Anlat:</label>
+        <textarea id="intro" cols="30"></textarea>
+      </div>
+      <div>
+        <p>En Sevdiğin Programlama Dili Nedir?</p>
+        <input type="radio" id="html" name="Programlama" />
+        <label for="html">Html</label>
+
+        <input type="radio" id="Css" name="Programlama" />
+        <label for="Css">Css</label>
+
+        <input type="radio" id="javascript" name="Programlama" />
+        <label for="javascript">Javascript</label>
+      </div>
+      <div>
+        <p>En Sevdiğin Programlama Dili Nedir?</p>
+        <input type="checkbox" id="htmlcheck" />
+        <label for="htmlcheck">Html</label>
+
+        <input type="checkbox" id="Csscheck" />
+        <label for="Csscheck">Css</label>
+
+        <input type="checkbox" id="javascriptcheck" />
+        <label for="javascriptcheck">Javascript</label>
+      </div>
+      <div>
+        <label for="cities">Şehirler</label>
+        <select id="cities">
+          <option value="41">Kocaeli</option>
+          <option value="34">İstanbul</option>
+        </select>
+      </div>
+      <div><label for="email">E-Posta</label></div>
+      <input type="email" id="email" />
+      <div>
+        <button type="submit">Kaydet</button>
+        <button type="reset">Temizle</button>
+      </div>
+    </form>
+  </body>
+</html>

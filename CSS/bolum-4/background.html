@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      #header {
+        background-color: red;
+        background-image: linear-gradient(
+            to bottom right,
+            rgba(230, 255, 230, 0.6),
+            rgba(102, 255, 102, 0.6)
+          ),
+          url(../../Images/bg.jpg);
+        height: 100vh;
+        background-size: cover;
+        /* width: 80vw; */
+      }
+      #header h1 {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 80px;
+        color: red;
+      }
+      .logo {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        width: 70px;
+      }
+    </style>
+  </head>
+  <body>
+    <header id="header">
+      <h1>Background Text</h1>
+      <img src="../../Images/logo.png" alt="logo foto" class="logo" />
+    </header>
+  </body>
+</html>

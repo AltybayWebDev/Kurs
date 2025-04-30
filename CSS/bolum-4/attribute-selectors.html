@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attribute Selectors</title>
+    <style>
+      /* Attribute Selectors */
+
+      /* a[target] {
+        background-color: red;
+      }
+
+      [class] {
+        background-color: blue;
+      } */
+
+      /* Attribute value selector */
+
+      /* a[class="active"] {
+        background-color: blue;
+      } */
+
+      /* Attribute '*' selector */
+
+      /* [class*="active"] {
+        background-color: blue;
+      } */
+
+      /* Attribute '~' selector */
+
+      /* [class~="active"] {
+        background-color: blue;
+      } */
+
+      /* Attribute '|' selector */
+
+      /* [class|="active"] {
+        background-color: blue;
+      } */
+
+      /* Attribute '^' selector */
+      /*Başta acvite class'ı var ise*/
+      /* [class^="active"] {
+        background-color: blue;
+      } */
+
+      /* Attribute '$' selector */
+      /* sonunda active class'ı var ise*/
+      /* [class$="active"] {
+        background-color: blue;
+      } */
+    </style>
+  </head>
+  <body>
+    <span class="active-span text">span</span>
+
+    <nav>
+      <a href="" target="_blank">home</a>
+      <a href="" class="active">about</a>
+      <a href="" class="link">contact</a>
+    </nav>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animate CSS</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+      .div {
+        background-color: blueviolet;
+        width: 150px;
+        height: 200px;
+      }
+      .element {
+        width: 150px;
+        height: 200px;
+        background-color: yellow;
+        animation: bounceIn;
+        animation-duration: 2s;
+      }
+
+      .animate__animated.animate__wobble {
+        --animate-duration: 2s;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="animate__animated animate__wobble animate__infinite">An animated element</h1>
+    <div
+      class="div animate__animated animate__backInDown animate__delay-2s"
+    ></div>
+    <div class="element "></div>
+  </body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout uygulaması</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .header {
+        text-align: center;
+        background-color: goldenrod;
+        padding: 30px;
+        color: #fff;
+      }
+
+      .navbar {
+        background-color: #333;
+        display: flex;
+        align-items: center;
+      }
+
+      .navbar a {
+        color: #fff;
+        text-decoration: none;
+        padding: 16px 20px;
+      }
+
+      .navbar a:hover {
+        background-color: #ddd;
+        color: #000;
+        transition: all 0.5s;
+      }
+
+      img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .ph {
+        background-color: #aaa;
+        width: 100%;
+        padding: 20px;
+        margin-top: 10px;
+      }
+
+      #main {
+        display: flex;
+      }
+
+      #sidebar {
+        order: 1;
+        flex: 25%;
+        padding: 20px;
+        background-color: #f1f1f1;
+      }
+
+      #content {
+        flex: 75%;
+        padding: 20px;
+      }
+      .box {
+        margin-bottom: 20px;
+      }
+
+      p {
+        margin: 10px 0;
+      }
+
+      #footer {
+        background-color: goldenrod;
+        padding: 20px;
+        text-align: center;
+        color: #fff;
+      }
+
+      @media (max-width: 600px) {
+        #main,
+        .navbar {
+          flex-direction: column;
+        }
+
+        #sidebar {
+          order: -1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Lorem, ipsum.</h1>
+      <p>Lorem, ipsum dolor.</p>
+    </div>
+    <div class="navbar">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+      <a href="#">Link 4</a>
+    </div>
+
+    <div id="main">
+      <div id="sidebar">
+        <div class="box">
+          <h2>Lorem, ipsum.</h2>
+          <div class="ph" style="height: 200px"></div>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis,
+            repellendus laboriosam necessitatibus quidem dolore, amet sapiente
+            porro quisquam temporibus atque similique molestiae assumenda
+            veniam! Veniam deserunt et iure laudantium enim?
+          </p>
+        </div>
+        <div class="ph" style="height: 50px"></div>
+        <div class="ph" style="height: 50px"></div>
+        <div class="ph" style="height: 50px"></div>
+      </div>
+
+      <div id="content">
+        <div class="box">
+          <h2>Lorem, ipsum.</h2>
+          <div class="ph" style="height: 200px"></div>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis,
+            repellendus laboriosam necessitatibus quidem dolore, amet sapiente
+            porro quisquam temporibus atque similique molestiae assumenda
+            veniam! Veniam deserunt et iure laudantium enim?
+          </p>
+        </div>
+        <div class="box">
+          <h2>Lorem, ipsum.</h2>
+          <div class="ph" style="height: 200px"></div>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis,
+            repellendus laboriosam necessitatibus quidem dolore, amet sapiente
+            porro quisquam temporibus atque similique molestiae assumenda
+            veniam! Veniam deserunt et iure laudantium enim?
+          </p>
+        </div>
+        <div class="box">
+          <h2>Lorem, ipsum.</h2>
+          <div class="ph" style="height: 200px"></div>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis,
+            repellendus laboriosam necessitatibus quidem dolore, amet sapiente
+            porro quisquam temporibus atque similique molestiae assumenda
+            veniam! Veniam deserunt et iure laudantium enim?
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">Lorem, ipsum dolor.</div>
+  </body>
+</html>
